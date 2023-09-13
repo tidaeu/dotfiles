@@ -15,6 +15,10 @@ return packer.startup(function(use)
   -- use 'navarasu/onedark.nvim' --One Dark Theme
   use 'rebelot/kanagawa.nvim' -- Kanagawa  
   
+  -- Lualine
+  use 'nvim-tree/nvim-web-devicons' -- Icons
+  use { 'nvim-lualine/lualine.nvim' }
+
   -- Completion
   use 'hrsh7th/nvim-cmp' --The Completion Plugin
   use 'hrsh7th/cmp-buffer' -- Buffer completions
@@ -38,10 +42,7 @@ return packer.startup(function(use)
   --use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   --use "RRethy/vim-illuminate" 
 
-  --Telescope 
-  --use 'nvim-telescope/telescope.nvim'
-
-  --Treesitter
+  --Treesitter Don't forget to install -> winget install BurntSushi.ripgrep.MSVC
      use({
         "nvim-treesitter/nvim-treesitter",
         run = function()
@@ -52,7 +53,12 @@ return packer.startup(function(use)
         end,
     }) 
 
+	-- Telescope
+	use {
+	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
+	  requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
  	-- Misc
 	use 'mg979/vim-visual-multi' --Multi-Cursor
-	use 'nvim-tree/nvim-web-devicons' -- Icons
 end)
