@@ -1,0 +1,6 @@
+require("user.plugins")
+require("user.settings")
+require("user.keymaps")
+require("user.kanagawa")
+require("user.treesitter")
+require("user.lsp")
