@@ -5,9 +5,8 @@ local status_ok, _ = pcall(require, "omnisharp_extended");
 if(not status_ok) then
 	print("omnisharp extended failed to load")
 end
-
--- local omnisharp_bin =  "C:\\Users\\tdeuk\\AppData\\Local\\nvim\\omnisharp\\OmniSharp.dll" 
-local omnisharp_bin =  "/../../..\nvim\\omnisharp\\OmniSharp.dll" 
+-- I think this has to be abolute path?
+local omnisharp_bin =  "C:\\Users\\tdeuk\\AppData\\Local\\nvim\\omnisharp\\OmniSharp.dll" 
 local pid = vim.fn.getpid()
 
 require'lspconfig'.omnisharp.setup {
