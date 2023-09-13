@@ -9,4 +9,4 @@ end
 -- require("user.lsp.handlers")
 require("user.lsp.lspconfigs")
 require("user.lsp.mason")
-require("user.lsp.Omnisharp")
+require("user.lsp.omnisharp-lsp")
