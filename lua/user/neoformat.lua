@@ -3,5 +3,15 @@
 --   autocmd BufWritePre * undojoin | Neoformat
 -- augroup END
 
--- vim.api.nvim_create_autocmd("BufWritePre * .js", { command = "Neoformat prettier" } )
-vim.api.nvim_create_autocmd("BufWritePre * .cs", { command = "Neoformat csharpier" } )
+-- vim.cmd [[ autocmd BufWritePre *.js Neoformat prettier ]]
+-- vim.cmd [[ autocmd BufWritePre *.ts Neoformat prettier ]]
+-- vim.cmd [[ autocmd BufWritePre *.cs Neoformat csharpier ]]
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.cs" },
+    command = "Neoformat csharpier",
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.ts", "*.js" },
+    command = "Neoformat prettier",
+})
