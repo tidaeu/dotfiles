@@ -7,6 +7,7 @@ end
 
 -- require("user.lsp.lsp-installer")
 -- require("user.lsp.handlers")
-require("user.lsp.lspconfigs")
+require("user.lsp.lspconfigs").setup()
 require("user.lsp.mason")
 require("user.lsp.omnisharp-lsp")
+require("user.lsp.typescript-lsp")

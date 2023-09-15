@@ -5,22 +5,32 @@ if(not status_ok) then
 	return
 end
 
+vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
 
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
+     default_speed = 1,
+		
     mappings = {
       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
+        ["<C-h>"] = "which_key",
+	["<A-j>"] = require('telescope.actions').move_selection_next,
+	["<A-k>"] = require('telescope.actions').move_selection_previous,
+	["<A-S-j>"] = require('telescope.actions').preview_scrolling_down,
+	["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
+ 
+	-- ["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
       }
     }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
+    	scroll_speed = 1
     -- picker_name = {
     --   picker_config_key = value,
     --   ...
@@ -38,7 +48,8 @@ require('telescope').setup{
 }
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
