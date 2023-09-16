@@ -139,17 +139,21 @@ _G.packer_plugins = {
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     config = { "\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20user.treesitter\frequire\0" },
     loaded = true,
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-webdevicons"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-webdevicons",
-    url = "https://github.com/nvim-tree/nvim-webdevicons"
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["omnisharp-extended-lsp.nvim"] = {
     loaded = true,

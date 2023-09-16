@@ -65,6 +65,9 @@ return packer.startup(function(use)
 		},
 	}
 
+	-- Toggle Terminals
+	use {"akinsho/toggleterm.nvim"}
+
 	-- Misc
 	use 'mg979/vim-visual-multi' --Multi-Cursor
 end)
