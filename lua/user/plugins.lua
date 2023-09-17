@@ -58,12 +58,12 @@ return packer.startup(function(use)
 	}
 
 	-- Nvim-Tree
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = {
-			'nvim-tree/nvim-web-devicons', -- optional
-		},
-	}
+	-- use {
+	-- 	'nvim-tree/nvim-tree.lua',
+	-- 	requires = {
+	-- 		'nvim-tree/nvim-web-devicons', -- optional
+	-- 	},
+	-- }
 
 	-- Toggle Terminals
 	use {"akinsho/toggleterm.nvim"}

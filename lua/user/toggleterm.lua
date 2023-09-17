@@ -8,7 +8,6 @@ end
 local powershell_options = {
   shell = vim.fn.executable "pwsh" == 1 and "pwsh" or "powershell",
   shellcmdflag = "-NoLogo -ExecutionPolicy Unrestricted -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
-  -- shellcmdflag = "-NoLogo -NoProfile ", 
   shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
   shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
   shellquote = "",
@@ -21,7 +20,8 @@ end
 
 require'toggleterm'.setup{
 	size = 20, 
-	open_mapping = [[<c-\>]],
+	open_mapping = [[<A-\>]],
+	-- open_mapping = [[<C-t>]],
 	shade_terminals = true,
 	shading_factor = 2,
 	persist_size = true,

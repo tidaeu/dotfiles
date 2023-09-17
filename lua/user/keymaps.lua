@@ -35,11 +35,10 @@ keymap('n', "gW", '<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.
 
 -- Remap Navigate Lines
 keymap("n", "#", "^", opts)
-
--- Get rid of substitue
-keymap("n", "s", "<Nop>", opts)
 keymap("v", "#", "<Nop>", opts)
 keymap("v", "#", "_", opts)
 
-
+-- Get rid of substitue
+keymap("n", "s", "<Nop>", opts)
 keymap("n", "q", "<Nop>", opts)
+-- keymap("n", "<C-t>", "<Nop>", opts)

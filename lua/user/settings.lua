@@ -5,7 +5,8 @@ local options = {
 	relativenumber = true,
 	number = true,
 	scrolloff = 10,
-	clipboard = "unnamedplus"
+	clipboard = "unnamedplus",
+	cursorline = true
 }
 
 for k, v in pairs(options) do
