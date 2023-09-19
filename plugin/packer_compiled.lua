@@ -124,10 +124,25 @@ _G.packer_plugins = {
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoformat",
     url = "https://github.com/sbdchd/neoformat"
+  },
+  ["noice.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\noice.nvim",
+    url = "https://github.com/folke/noice.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,

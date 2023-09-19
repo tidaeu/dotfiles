@@ -57,6 +57,31 @@ return packer.startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = { 
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		}
+	}
+
+	-- use {
+	-- 	"nvim-telescope/telescope-file-browser.nvim",
+	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+	-- }
+	-- Noice
+	use { "rcarriga/nvim-notify" }
+	use {
+		'folke/noice.nvim',
+		requires = { {'MunifTanjim/nui.nvim', "rcarriga/nvim-notify"} }
+	}
+
+	-- Oil
+	-- use {
+	-- 	'stevearc/oil.nvim'
+	-- }
 	-- Nvim-Tree
 	-- use {
 	-- 	'nvim-tree/nvim-tree.lua',
