@@ -47,7 +47,6 @@ require("oil").setup({
     ["<C-s>"] = "actions.select_vsplit",
     ["<C-h>"] = "actions.select_split",
     -- ["<C-t>"] = "actions.select_tab",
-    ["<C-t>"] = "<CMD>Oil --float .<CR>",
     -- ["<C-p>"] = "false",
     -- ["<C-p>"] =  builtin.find_files,
     ["<C-p>"] =  require('telescope.builtin').find_files,
@@ -84,7 +83,7 @@ require("oil").setup({
   -- Configuration for the floating window in oil.open_float
   float = {
     -- Padding around the floating window
-    padding = 5,
+    padding = 0,
     max_width = 50,
     max_height = 50,
     border = "rounded",
@@ -135,3 +134,5 @@ require("oil").setup({
     },
   },
 })
+
+vim.keymap.set('n', '<C-t>', '<cmd>Oil --float<CR>', opts)

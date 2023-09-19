@@ -71,6 +71,7 @@ return packer.startup(function(use)
 	-- 	"nvim-telescope/telescope-file-browser.nvim",
 	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
 	-- }
+	
 	-- Noice
 	use { "rcarriga/nvim-notify" }
 	use {
@@ -79,9 +80,8 @@ return packer.startup(function(use)
 	}
 
 	-- Oil
-	-- use {
-	-- 	'stevearc/oil.nvim'
-	-- }
+	-- use {'stevearc/oil.nvim'}
+	
 	-- Nvim-Tree
 	-- use {
 	-- 	'nvim-tree/nvim-tree.lua',

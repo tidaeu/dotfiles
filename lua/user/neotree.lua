@@ -75,8 +75,8 @@
           git_status = {
             symbols = {
               -- Change type
-              added     = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
+              added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
               deleted   = "✖",-- this can only be used in the git_status source
               renamed   = "󰁕",-- this can only be used in the git_status source
               -- Status type
@@ -288,4 +288,23 @@
         }
       })
 
-      vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+vim.api.nvim_create_autocmd("QuitPre", {
+  callback = function()
+    local invalid_win = {}
+    local wins = vim.api.nvim_list_wins()
+    for _, w in ipairs(wins) do
+      local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
+	print(bufname)
+      if bufname:match("Neotree_") ~= nil then
+        table.insert(invalid_win, w)
+      end
+    end
+    if #invalid_win == #wins - 1 then
+      -- Should quit, so we close all invalid windows.
+      for _, w in ipairs(invalid_win) do vim.api.nvim_win_close(w, true) end
+    end
+  end
+})
+      -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
+-- vim.keymap.set('n', '<C-t>', '<cmd>Neotree close<CR><bar><cmd>Telescope find_files<CR>', {})
