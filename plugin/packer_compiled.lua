@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["glance.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\glance.nvim",
+    url = "https://github.com/dnlhc/glance.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\kanagawa.nvim",
@@ -189,11 +194,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["toggleterm.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\tdeuk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\toggleterm.nvim",
-    url = "https://github.com/akinsho/toggleterm.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,

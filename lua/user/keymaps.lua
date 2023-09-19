@@ -44,3 +44,5 @@ keymap("n", "q", "<Nop>", opts)
 keymap("n", "<C-t>", "<Nop>", opts)
 -- keymap("n", "<C-t>", "<CMD>Neotree toggle<CR>", opts)
 
+-- Neotree
+vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})

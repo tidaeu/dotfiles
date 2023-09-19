@@ -305,6 +305,5 @@ vim.api.nvim_create_autocmd("QuitPre", {
     end
   end
 })
-      -- vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+
 vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
--- vim.keymap.set('n', '<C-t>', '<cmd>Neotree close<CR><bar><cmd>Telescope find_files<CR>', {})

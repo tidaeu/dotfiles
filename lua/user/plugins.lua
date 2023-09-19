@@ -67,10 +67,7 @@ return packer.startup(function(use)
 		}
 	}
 
-	-- use {
-	-- 	"nvim-telescope/telescope-file-browser.nvim",
-	-- 	requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-	-- }
+	use { "dnlhc/glance.nvim" }
 	
 	-- Noice
 	use { "rcarriga/nvim-notify" }
@@ -79,16 +76,6 @@ return packer.startup(function(use)
 		requires = { {'MunifTanjim/nui.nvim', "rcarriga/nvim-notify"} }
 	}
 
-	-- Oil
-	-- use {'stevearc/oil.nvim'}
-	
-	-- Nvim-Tree
-	-- use {
-	-- 	'nvim-tree/nvim-tree.lua',
-	-- 	requires = {
-	-- 		'nvim-tree/nvim-web-devicons', -- optional
-	-- 	},
-	-- }
 
 	-- Toggle Terminals
 	use {"akinsho/toggleterm.nvim"}
