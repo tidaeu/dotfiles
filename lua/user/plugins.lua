@@ -51,6 +51,12 @@ return packer.startup(function(use)
 		end,
 	}) 
 
+	use { 'goolord/alpha-nvim', 
+	requires = { 'nvim-tree/nvim-web-devions' },
+		config = function()
+		require'alpha'.setup(require'alpha.themes.startify'.config)
+		end
+	}
 	-- Telescope
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
@@ -62,7 +68,7 @@ return packer.startup(function(use)
 		branch = "v3.x",
 		requires = { 
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			-- "nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		}
 	}
