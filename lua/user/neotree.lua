@@ -9,6 +9,18 @@
         {text = "󰌵", texthl = "DiagnosticSignHint"})
 
       require("neo-tree").setup({
+	-- -- vim.api.nvim_set_hl(0, 'NeoTreeFloatBorder', { bg = "red"}),
+	-- vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle', { bg = "NONE",  ctermbg= 0}),
+	-- vim.api.nvim_set_hl(0, 'NeoTreeFloatNormal', { bg = "NONE",  ctermbg= 0}),
+	-- vim.api.nvim_set_hl(0, 'NeoTreeTitleBar', { fg = "NONE",  ctermbg= 0}),
+	-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" }),
+	-- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" }),
+	-- vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" }),
+	-- -- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "#FFFFFF" }),
+	-- -- vim.api.nvim_set_hl(0, 'FloatFooter', { bg = "#FFFFFF" }),
+	-- -- vim.api.nvim_set_hl(0, 'FloatShadow', { bg = "#FFFFFF" }),
+	-- -- vim.api.nvim_set_hl(0, 'FloatShadowThrough', { fg = "#FFFFFF", }),
+
         close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
         enable_git_status = true,
@@ -35,6 +47,7 @@
 			  end
 		  },
 	  },
+
         default_component_configs = {
           container = {
             enable_character_fade = true
@@ -53,6 +66,7 @@
             expander_expanded = "",
             expander_highlight = "NeoTreeExpander",
           },
+
           icon = {
             folder_closed = "",
             folder_open = "",

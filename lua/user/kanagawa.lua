@@ -17,17 +17,38 @@ require('kanagawa').setup({
     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
     colors = {                   -- add/modify theme and palette colors
+	
         palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+		theme = { wave = {
+			ui = {
+				float = {
+					bg = "none",
+					fg = "none",
+					bg_border = "none",
+					fg_border = "none",
+				}
+			}
+			}, lotus = {}, dragon = {}, all = {} },
     },
+
     overrides = function(colors) -- add/modify highlights
-        return {}
+    local theme = colors.theme
+        return {  NormalFloat = { bg = "none" },
+        FloatBorder = { bg = "NONE" },
+        FloatTitle = { bg = "NONE" },
+	TelescopePromptBorder = {bg = "NONE"},
+        TelescopePreviewBorder = {  fg = "#717C7C", bg = "NONE", },
+        TelescopeResultsBorder = { fg = "#717C7C", bg = "NONE" },
+        TelescopePromptBorder = { fg = "#717C7C", bg = "NONE" },
+        Visual = {bg = "#293c57" },
+	}
     end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    -- theme = "wave",              -- Load "wave" theme when 'background' option is not set
     background = {               -- map the value of 'background' option to a theme
         dark = "wave",           -- try "dragon" !
         light = "lotus"
     },
 })
 
+-- vim.api.nvim_set_hl(0, 'Visual', { ctermbg = 15, ctermfg = 15})
 vim.cmd("colorscheme kanagawa")

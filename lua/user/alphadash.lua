@@ -1,49 +1,56 @@
 
 -- alpha-config.lua
 
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
- return
+config = function()
+	require'alpha'.setup(require'alpha.themes.dashboard'.config)
 end
 
+local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
-dashboard.section.header.val = {
+-- local dashboard = require("alpha.themes.theta")
 
-    [[          ▀████▀▄▄              ▄█ ]],
-    [[            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ]],
-    [[    ▄        █          ▀▀▀▀▄  ▄▀  ]],
-    [[   ▄▀ ▀▄      ▀▄              ▀▄▀  ]],
-    [[  ▄▀    █     █▀   ▄█▀▄      ▄█    ]],
-    [[  ▀▄     ▀▄  █     ▀██▀     ██▄█   ]],
-    [[   ▀▄    ▄▀ █   ▄██▄   ▄  ▄  ▀▀ █  ]],
-    [[    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ]],
-    [[   █   █  █      ▄▄           ▄▀   ]],
-
+local coolLines = {
+  [[    ███╗   ███╗ █████╗ ██╗  ██╗███████╗   ]],
+  [[    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝   ]],
+  [[    ██╔████╔██║███████║█████╔╝ █████╗     ]],
+  [[    ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝     ]],
+  [[    ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗   ]],
+  [[    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ]],
+  [[      ██████╗ ██████╗  ██████╗ ██╗        ]],
+  [[     ██╔════╝██╔═══██╗██╔═══██╗██║        ]],
+  [[     ██║     ██║   ██║██║   ██║██║        ]],
+  [[     ██║     ██║   ██║██║   ██║██║        ]],
+  [[     ╚██████╗╚██████╔╝╚██████╔╝███████╗   ]],
+  [[      ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝   ]],
+  [[███████╗████████╗██╗   ██╗███████╗███████╗]],
+  [[██╔════╝╚══██╔══╝██║   ██║██╔════╝██╔════╝]],
+  [[███████╗   ██║   ██║   ██║█████╗  █████╗  ]],
+  [[╚════██║   ██║   ██║   ██║██╔══╝  ██╔══╝  ]],
+  [[███████║   ██║   ╚██████╔╝██║     ██║     ]],
+  [[╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝     ]],
 }
+-- Set header
+   dashboard.section.header.val = coolLines
+-- dashboard.section.header.val = {
+--     "                                                     ",
+--     "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+--     "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+--     "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+--     "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+--     "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+--     "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+--     "                                                     ",
+-- }
 
- dashboard.section.buttons.val = {
-   dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-   dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-   dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-   dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-   dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
-   dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+-- Set menu
+dashboard.section.buttons.val = {
+    dashboard.button( "n", "  > New file" , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "<C-p>", "  > Find file", ":Telescope find_files<CR>"),
+    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
+    dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+    dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
 }
-
-local function footer()
- return "Don't Stop Until You are Proud..."
-end
-
-dashboard.section.footer.val = footer()
-
-dashboard.section.footer.opts.hl = "Type"
-dashboard.section.header.opts.hl = "Include"
-dashboard.section.buttons.opts.hl = "Keyword"
-
-dashboard.opts.opts.noautocmd = true
-alpha.setup(dashboard.opts)
 
 vim.api.nvim_create_autocmd("VimEnter", {
     command = "Alpha",
 })
-
