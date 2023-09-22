@@ -59,6 +59,17 @@ return packer.startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+	-- use { 'nvim-telescope/telescope-project.nvim' }
+
+	use { "ahmedkhalf/project.nvim", 
+		config = function()
+			require("project_nvim").setup {
+				detection_methods = { "lsp", "pattern" },
+				patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },			-- refer to the configuration section below
+			}
+		end
+	}
+	-- Change directory to project root
 	use {
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",

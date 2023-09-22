@@ -33,14 +33,16 @@ require('kanagawa').setup({
 
     overrides = function(colors) -- add/modify highlights
     local theme = colors.theme
-        return {  NormalFloat = { bg = "none" },
-        FloatBorder = { bg = "NONE" },
-        FloatTitle = { bg = "NONE" },
-	TelescopePromptBorder = {bg = "NONE"},
-        TelescopePreviewBorder = {  fg = "#717C7C", bg = "NONE", },
-        TelescopeResultsBorder = { fg = "#717C7C", bg = "NONE" },
-        TelescopePromptBorder = { fg = "#717C7C", bg = "NONE" },
-        Visual = {bg = "#293c57" },
+        return {  
+			NormalFloat = { bg = "none" },
+			FloatBorder = { bg = "NONE" },
+			FloatTitle = { bg = "NONE" },
+			TelescopePromptBorder = {bg = "NONE"},
+			TelescopePreviewBorder = {  fg = "#717C7C", bg = "NONE", },
+			TelescopeResultsBorder = { fg = "#717C7C", bg = "NONE" },
+			TelescopePromptBorder = { fg = "#717C7C", bg = "NONE" },
+			DashboardHeader = { fg = "#98BB6C" },
+			Visual = {bg = "#293c57" },
 	}
     end,
     -- theme = "wave",              -- Load "wave" theme when 'background' option is not set

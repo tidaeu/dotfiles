@@ -46,3 +46,26 @@ keymap("n", "<C-t>", "<Nop>", opts)
 
 -- Neotree
 vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
+
+-- Telescope
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-p>', "<cmd>Neotree close<CR><bar><cmd>Telescope find_files<CR>", {})
+vim.keymap.set('n', '<C-\\>', "<cmd>Neotree close<CR><bar><cmd>Telescope projects theme=dropdown<CR>", {})
+vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)
+
+-- Neotree
+vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
+
+-- Glance
+-- vim.keymap.set('n', 'gD', '<CMD>Glance definitions<CR>')
+vim.keymap.set('n', 'gR', '<CMD>Glance references<CR>')
+vim.keymap.set('n', 'gY', '<CMD>Glance type_definitions<CR>')
+vim.keymap.set('n', 'gM', '<CMD>Glance implementations<CR>')

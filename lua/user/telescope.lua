@@ -11,11 +11,20 @@ vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
 --     command = "Neotree close",
 -- })
 
+
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
      default_speed = 1,
+     theme = "dropdown",
+     layout_config = {
+			center = {
+				width = 0.5,
+				height = 0.5,
+			},
+			
+		},
 		
     mappings = {
       i = {
@@ -34,36 +43,29 @@ require('telescope').setup{
     }
   },
   pickers = {
-    -- Default configuration for builtin pickers goes here:
-    	scroll_speed = 1
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
-
-  extensions = {
-    file_browser = {
---       theme = "ivy",
---       -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
-    }
-  }
+	extensions = {
+		projects = { 
+			on_project_selected = function(prompt_bufnr)
+				-- Do anything you want in here. For example:
+				project_actions.change_working_directory(prompt_bufnr, false)
+				print("test2")
+			end
+		}
+	}
 }
 
-local builtin = require('telescope.builtin')
--- vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-p>', "<cmd>Neotree close<CR><bar><cmd>Telescope find_files<CR>", {})
-vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
--- vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>fb",
-  ":Telescope file_browser<CR>",
-  { noremap = true }
-)
+require('telescope').load_extension('projects')
+-- require('telescope').load_extension('project')
+-- local builtin = require('telescope.builtin')
+-- vim.keymap.set('n', '<C-p>', "<cmd>Neotree close<CR><bar><cmd>Telescope find_files<CR>", {})
+-- vim.keymap.set('n', '<C-g>', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+-- vim.api.nvim_set_keymap(
+--   "n",
+--   "<space>fb",
+--   ":Telescope file_browser<CR>",
+--   { noremap = true }
+-- )
 
--- require("telescope").load_extension "file_browser"
+

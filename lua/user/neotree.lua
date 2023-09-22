@@ -26,7 +26,7 @@
         enable_git_status = true,
         enable_diagnostics = true,
         enable_normal_mode_for_inputs = false, -- Enable normal mode for input dialogs.
-        open_files_do_not_replace_types = { "terminal", "trouble", "qf"}, -- when opening files, do not use windows containing these filetypes or buftypes
+        -- open_files_do_not_replace_types = { "terminal", "trouble", "qf"}, -- when opening files, do not use windows containing these filetypes or buftypes
         sort_case_insensitive = false, -- used when sorting files and directories in the tree
         sort_function = nil , -- use a custom function for sorting files and directories in the tree 
         -- sort_function = function (a,b)
@@ -301,22 +301,22 @@
         }
       })
 
-vim.api.nvim_create_autocmd("QuitPre", {
-  callback = function()
-    local invalid_win = {}
-    local wins = vim.api.nvim_list_wins()
-    for _, w in ipairs(wins) do
-      local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
-	print(bufname)
-      if bufname:match("Neotree_") ~= nil then
-        table.insert(invalid_win, w)
-      end
-    end
-    if #invalid_win == #wins - 1 then
-      -- Should quit, so we close all invalid windows.
-      for _, w in ipairs(invalid_win) do vim.api.nvim_win_close(w, true) end
-    end
-  end
-})
+-- vim.api.nvim_create_autocmd("QuitPre", {
+--   callback = function()
+--     local invalid_win = {}
+--     local wins = vim.api.nvim_list_wins()
+--     for _, w in ipairs(wins) do
+--       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
+-- 	print(bufname)
+--       if bufname:match("Neotree_") ~= nil then
+--         table.insert(invalid_win, w)
+--       end
+--     end
+--     if #invalid_win == #wins - 1 then
+--       -- Should quit, so we close all invalid windows.
+--       for _, w in ipairs(invalid_win) do vim.api.nvim_win_close(w, true) end
+--     end
+--   end
+-- })
 
-vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
+-- vim.keymap.set('n', '<C-t>', '<cmd>Neotree toggle<CR>', {})
