@@ -36,6 +36,9 @@ require('telescope').setup{
 	["<A-k>"] = require('telescope.actions').move_selection_previous,
 	["<A-S-j>"] = require('telescope.actions').preview_scrolling_down,
 	["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
+	["<C-s>"] = require('telescope.actions').file_vsplit,
+	["<C-v>"] = require('telescope.actions').file_split,
+	["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
 	["<C-t>"] = false,
  
 	-- ["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
@@ -45,13 +48,7 @@ require('telescope').setup{
   pickers = {
   },
 	extensions = {
-		projects = { 
-			on_project_selected = function(prompt_bufnr)
-				-- Do anything you want in here. For example:
-				project_actions.change_working_directory(prompt_bufnr, false)
-				print("test2")
-			end
-		}
+		
 	}
 }
 

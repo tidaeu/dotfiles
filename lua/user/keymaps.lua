@@ -39,7 +39,7 @@ keymap("v", "#", "<Nop>", opts)
 keymap("v", "#", "_", opts)
 
 -- Get rid of substitue
-keymap("n", "s", "<Nop>", opts)
+-- keymap("n", "s", "<Nop>", opts)
 keymap("n", "q", "<Nop>", opts)
 keymap("n", "<C-t>", "<Nop>", opts)
 -- keymap("n", "<C-t>", "<CMD>Neotree toggle<CR>", opts)
