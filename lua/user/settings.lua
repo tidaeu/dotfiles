@@ -1,11 +1,17 @@
-local global = vim.g 
-local o = vim.o
+-- local global = vim.g
+-- local o = vim.o
 
 local options = {
 	relativenumber = true,
 	number = true,
 	scrolloff = 10,
 	clipboard = "unnamedplus",
+	tabstop = 2,
+	shiftwidth = 2,
+	expandtab = true,
+	autoindent = true,
+	smartindent = true,
+	hidden = true,
 	cursorline = true
 }
 

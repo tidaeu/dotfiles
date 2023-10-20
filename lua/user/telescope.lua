@@ -12,7 +12,7 @@ vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
 -- })
 
 
-require('telescope').setup{
+require('telescope').setup{  
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -37,7 +37,7 @@ require('telescope').setup{
 	["<A-S-j>"] = require('telescope.actions').preview_scrolling_down,
 	["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
 	["<C-s>"] = require('telescope.actions').file_vsplit,
-	["<C-v>"] = require('telescope.actions').file_split,
+	["<C-h>"] = require('telescope.actions').file_split,
 	["<A-S-k>"] = require('telescope.actions').preview_scrolling_up,
 	["<C-t>"] = false,
  
@@ -52,6 +52,7 @@ require('telescope').setup{
 	}
 }
 
+-- require("telescope").load_extension("notify")
 require('telescope').load_extension('projects')
 -- require('telescope').load_extension('project')
 -- local builtin = require('telescope.builtin')

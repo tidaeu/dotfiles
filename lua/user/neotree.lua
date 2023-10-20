@@ -9,18 +9,6 @@
         {text = "󰌵", texthl = "DiagnosticSignHint"})
 
       require("neo-tree").setup({
-	-- -- vim.api.nvim_set_hl(0, 'NeoTreeFloatBorder', { bg = "red"}),
-	-- vim.api.nvim_set_hl(0, 'NeoTreeFloatTitle', { bg = "NONE",  ctermbg= 0}),
-	-- vim.api.nvim_set_hl(0, 'NeoTreeFloatNormal', { bg = "NONE",  ctermbg= 0}),
-	-- vim.api.nvim_set_hl(0, 'NeoTreeTitleBar', { fg = "NONE",  ctermbg= 0}),
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE", ctermbg = "NONE" }),
-	-- vim.api.nvim_set_hl(0, "NeoTreeNormal", { bg = "NONE", ctermbg = "NONE" }),
-	-- vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE", ctermbg = "NONE" }),
-	-- -- vim.api.nvim_set_hl(0, 'FloatBorder', { bg = "#FFFFFF" }),
-	-- -- vim.api.nvim_set_hl(0, 'FloatFooter', { bg = "#FFFFFF" }),
-	-- -- vim.api.nvim_set_hl(0, 'FloatShadow', { bg = "#FFFFFF" }),
-	-- -- vim.api.nvim_set_hl(0, 'FloatShadowThrough', { fg = "#FFFFFF", }),
-
         close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
         enable_git_status = true,
@@ -133,8 +121,8 @@
             nowait = true,
           },
           mappings = {
-            ["<space>"] = { 
-                "toggle_node", 
+            ["<space>"] = {
+                "toggle_node",
                 nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
             },
             ["<2-LeftMouse>"] = "open",
@@ -142,8 +130,8 @@
             ["<esc>"] = "cancel", -- close preview or floating neo-tree window
             ["P"] = { "toggle_preview", config = { use_float = true } },
             ["l"] = "focus_preview",
-            ["S"] = "open_split",
-            ["s"] = "open_vsplit",
+            ["<C-h>"] = "open_split",
+            ["<C-s>"] = "open_vsplit",
             -- ["S"] = "split_with_window_picker",
             -- ["s"] = "vsplit_with_window_picker",
             ["t"] = "open_tabnew",
@@ -155,7 +143,7 @@
             -- ['C'] = 'close_all_subnodes',
             ["z"] = "close_all_nodes",
             --["Z"] = "expand_all_nodes",
-            ["a"] = { 
+            ["a"] = {
               "add",
               -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
               -- some commands may take optional config options, see `:h neo-tree-mappings` for details

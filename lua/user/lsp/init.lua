@@ -10,4 +10,5 @@ end
 require("user.lsp.lspconfigs").setup()
 require("user.lsp.mason")
 require("user.lsp.omnisharp-lsp")
+require("user.lsp.lua-lsp")
 require("user.lsp.typescript-lsp")

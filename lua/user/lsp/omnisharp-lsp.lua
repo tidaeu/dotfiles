@@ -1,4 +1,3 @@
-local lspconfig = require "lspconfig"
 
 local status_ok, _ = pcall(require, "omnisharp_extended");
 
@@ -6,12 +5,11 @@ if(not status_ok) then
 	print("omnisharp extended failed to load")
 end
 -- I think this has to be abolute path?
-local omnisharp_bin =  "C:\\Users\\tdeuk\\AppData\\Local\\nvim\\omnisharp\\OmniSharp.dll" 
-local pid = vim.fn.getpid()
+local omnisharp_bin =  "C:\\Users\\tdeuk\\AppData\\Local\\nvim-util\\omnisharp\\OmniSharp.dll"
 
 require'lspconfig'.omnisharp.setup {
     cmd = { "dotnet", omnisharp_bin },
-    on_attach = on_attach,
+    -- on_attach = on_attach,
     handlers = { ["textDocument/definition"] = require('omnisharp_extended').handler },
 
     -- cmd = { omnisharp_bin, '--languageserver' , '--hostPID', tostring(pid) },
@@ -53,7 +51,7 @@ require'lspconfig'.omnisharp.setup {
 
 }
 
-local on_attach = function(client, bufnr)
+-- local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -72,4 +70,4 @@ local on_attach = function(client, bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-end
+-- end

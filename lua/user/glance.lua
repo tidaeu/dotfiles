@@ -64,6 +64,8 @@ glance.setup({
       ['<Tab>'] = actions.next_location,
       ['<S-Tab>'] = actions.previous_location,
       ['<leader>l'] = actions.enter_win('list'), -- Focus list window
+      ['q'] = actions.close,
+      ['<Esc>'] = actions.close,
     },
   },
   hooks = {},
