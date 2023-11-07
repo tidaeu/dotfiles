@@ -14,6 +14,7 @@ keymap("v", "p", "<Nop>", opts)
 keymap("v", "<S-p>", "<Nop>", opts)
 keymap("v", "p", "<S-p>", opts)
 keymap("v", "<S-p>", "p", opts)
+keymap("v", "<leader>p", "\"_dP", opts)
 
 -- Split Navigation
 keymap("n", "<A-h>", "<C-w>h", opts)
@@ -28,7 +29,6 @@ keymap("n", "<A-S-l>", "<C-w>L", opts)
 keymap("n", "<A-S-j>", "<C-w>J", opts)
 keymap("n", "<A-S-k>", "<C-w>K", opts)
 keymap("n", "<C-w>", "<CMD>bd<CR>", opts)
-
 keymap("n", "<leader>r", "<C-w><C-w>", opts)
 
 -- Reverse Previous and Next
